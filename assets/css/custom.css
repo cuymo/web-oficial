@@ -1,11 +1,65 @@
+/* Opcional: per-plan (descomenta y ajusta si deseas colores por tarjeta)
+ .pricing-section ul > li:nth-child(1) { --pricing-card-hover-bg: #0B1020; }
+ .pricing-section ul > li:nth-child(2) { --pricing-card-hover-bg: #1A3679; }
+ .pricing-section ul > li:nth-child(3) { --pricing-card-hover-bg: #321CA4; }
+ */
+
+/* Íconos/controles con hover violeta -> acento de pricing */
+.pricing-section .group:hover .group-hover\:bg-colorViolet {
+  background-color: var(--pricing-accent);
+}
+/* Tabs laterales */
+ .faq-section .faq-button {
+   border: 2px solid var(--faq-primary-dark);
+   color: var(--faq-primary-dark);
+   background: transparent;
+   font-weight: 700;
+   border-radius: 9999px; /* pill */
+   padding: 12px 18px;
+   transition: all .3s ease;
+ }
+
+/* Íconos/controles con hover violeta -> acento del FAQ */
+.faq-section .group:hover .group-hover\:bg-colorViolet {
+  background-color: var(--faq-accent);
+}
+#core-value .bg-black {
+  background-color: var(--about-primary-dark);
+}
+
+/* Íconos/controles con hover violeta -> acento de About */
+#core-value .group:hover .group-hover\:bg-colorViolet {
+  background-color: var(--about-accent);
+}
 .orange-gradient-1 {
-  background: radial-gradient(50% 50% at 50% 50%, #ff9831 0%, #fe330a 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #4d73cc 0%, #1a3679 100%);
   filter: blur(55px);
 }
 
 .orange-gradient-2 {
-  background: radial-gradient(50% 50% at 50% 50%, #fe330a 0%, #ff9831 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #4d73cc 0%, #1a3679 100%);
   filter: blur(55px);
+}
+
+/* =====================================================================
+  Typography – Headings use Inter (base Regular)
+  - Fuerza familia Inter en h1–h6 en todo el sitio
+  - Peso base 400; respetará utilidades como font-bold/semibold si existen
+  ===================================================================== */
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif !important;
+  font-weight: 400; /* no !important para permitir sobrescrituras explícitas */
+}
+
+/* Neutraliza utilidades que asignan otras familias */
+.font-clashDisplay,
+.font-dmSans,
+.font-raleway,
+.font-spaceGrotesk {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif !important;
 }
 
 
@@ -32,7 +86,7 @@
 }
 
 .accordion-item.active .accordion-icon.is-blue {
-  background-color: #321ca4;
+  background-color: #111828;
 }
 
 .accordion-icon.is-blue {
@@ -195,4 +249,628 @@
     opacity: 1;
     transform: translateZ(0);
   }
+}
+
+/* ===== Header (Nav) Tweaks - Desktop ===== */
+@media (min-width: 1024px) {
+  /*  Barra de navegación */
+  #sticky-menu.site-header {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+
+  /* Centrar menú y mantener logo a la izquierda */
+  #sticky-menu .global-container > .flex {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo | nav | acciones */
+    align-items: center;
+    gap: 2rem; /* similar a gap-x-8 */
+  }
+
+  #sticky-menu .menu-block-wrapper {
+    justify-self: center; /* centra el bloque del menú */
+  }
+
+  /* Asegura que la lista del menú se alinee centrada */
+  #sticky-menu .site-menu-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 80px; /* separa un poco más los items */
+  }
+
+  /* Hacer el texto del menú un poco más "grueso" visualmente */
+  #sticky-menu .site-menu-main .nav-link-item {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+}
+
+/* Core Value Section Spacing */
+#core-value {
+  margin-top: 80px;
+}
+
+@media (min-width: 1024px) {
+  #core-value {
+    margin-top: 96px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #core-value {
+    margin-top: 130px;
+  }
+}
+
+/* =====================================================================
+   Pricing Section – Theming & Overrides
+   - Solo afecta a la sección de precios (scoped por .pricing-section)
+   - Modifica botones, bordes, fondos y hover de tarjetas
+   - Ajusta los valores de las variables de abajo para cambiar el tema
+   ===================================================================== */
+
+/* Quick knobs (variables del tema) */
+:root {
+  /* Fondo base de la tarjeta */
+  --pricing-card-bg: #46507327; /* equivalente a bg-colorLinenRuffle por defecto */
+  /* Fondo al hacer hover en tarjeta */
+  --pricing-card-hover-bg: #111828; /* azul muy oscuro */
+  /* Color de texto base en tarjeta */
+  --pricing-text: #111828; /* texto base oscuro */
+  /* Color de texto en hover de tarjeta */
+  --pricing-hover-text: #ffffff;
+  /* Borde y texto de botón (idle) */
+  --pricing-button-border: #111828; /* borde del botón */
+  --pricing-button-text: #111828;   /* texto del botón */
+  /* Relleno del botón en hover (after background) */
+  --pricing-accent: #2558cfb6; /* acento azul vivo para hover del botón */
+  /* Separador (la línea h-[1px]) */
+  --pricing-divider: #9f9f9f;
+}
+
+/* Tarjetas: fondo base y en hover */
+.pricing-section li.group {
+  /* override de bg-colorLinenRuffle */
+  background-color: var(--pricing-card-bg);
+}
+.pricing-section li.group:hover {
+  /* override de hover:bg-black */
+  background-color: var(--pricing-card-hover-bg);
+}
+
+/* Texto dentro de la tarjeta: estado base y en hover
+   Nota: muchas etiquetas tienen utilidades Tailwind (text-black, group-hover:text-white).
+   Usamos mayor especificidad para imponer el color del tema. */
+/* (nota) el color base de la tarjeta también debe aplicar al contenedor li */
+
+/* =====================================================================
+   Home (Index) – Theming & Overrides
+   - Ajusta botones, acentos y gradientes del home sin tocar HTML
+   - Scope por IDs de secciones para máxima especificidad
+   ===================================================================== */
+
+/* Variables del Home */
+:root {
+  /* Botones primarios del home */
+  --home-button-bg: #111828;        /* botón principal: azul muy oscuro (marca) */
+  --home-button-text: #ffffff;      /* texto del botón */
+  --home-button-accent: #2563EB;    /* relleno del ::after: azul vibrante */
+
+  /* Viñetas (puntos) en listas de secciones de contenido */
+  --home-bullet: #2563EB;           /* punto de lista: azul acento */
+
+  /* Gradiente “blob” del Hero (círculo gigante) */
+  --home-hero-blob-from: #1E3A8A;  /* azul profundo */
+  --home-hero-blob-to:   #2563EB;  /* azul acento */
+
+  /* Gradientes de la sección Integraciones */
+  --home-integrates-blob-from:  #0c215c;
+  --home-integrates-blob-to:    #2563EB;
+  --home-integrates-panel-from: rgba(37, 99, 235, 0.10);
+  --home-integrates-panel-to:   rgba(0, 0, 0, 0.5);
+
+  /* Gradiente “blob” del Footer-2 */
+  --home-footer-blob-from: #1E3A8A;
+  --home-footer-blob-to:   #2563EB;
+}
+
+/* Botones del home (CTA en Hero, secciones y tarjetas) */
+#hero-section .button,
+#content-section-3 .button,
+#content-intregrates-section .button,
+#footer-2 .button {
+  background-color: var(--home-button-bg);
+  color: var(--home-button-text);
+}
+#hero-section .button::after,
+#content-section-3 .button::after,
+#content-intregrates-section .button::after,
+#footer-2 .button::after {
+  background-color: var(--home-button-accent);
+}
+/* Mantener legibilidad en hover */
+#hero-section .button:hover,
+#content-section-3 .button:hover,
+#content-intregrates-section .button:hover,
+#footer-2 .button:hover {
+  color: #ffffff;
+}
+
+/* Viñetas (puntos) en listas de contenido (evitar morado) */
+#content-section-1 li::after,
+#content-section-2 li::after,
+#content-intregrates-section li::after {
+  background-color: var(--home-bullet);
+}
+
+/* Gradiente: blob gigante del Hero (círculo) */
+#hero-section .rounded-full.bg-gradient-to-t {
+  background-image: linear-gradient(
+    to top,
+    var(--home-hero-blob-from),
+    var(--home-hero-blob-to)
+  );
+}
+
+/* Gradientes: sección Integraciones */
+/* Blob de fondo */
+#content-intregrates-section .rounded-full.bg-gradient-to-t {
+  background-image: linear-gradient(
+    to top,
+    var(--home-integrates-blob-from),
+    var(--home-integrates-blob-to)
+  );
+}
+/* Panel con logos (tarjeta con rounded-[30px]) */
+#content-intregrates-section .rounded-\[30px\].bg-gradient-to-t {
+  background-image: linear-gradient(
+    to top,
+    var(--home-integrates-panel-from),
+    var(--home-integrates-panel-to)
+  );
+}
+
+/* Gradiente: blob del Footer-2 */
+#footer-2 .rounded-full.bg-gradient-to-t {
+  background-image: linear-gradient(
+    to top,
+    var(--home-footer-blob-from),
+    var(--home-footer-blob-to)
+  );
+}
+
+/* Home (Index) – Feature section: centrado en móvil */
+@media (max-width: 639.98px) {
+  /* Centrar heading del bloque */
+  #feature-section h2 { text-align: center; }
+  /* Cada item: al ser flex-col en móvil, centramos el eje cruzado */
+  #feature-section ul > li { align-items: center; }
+  /* Contenido del item (título + párrafo) centrado */
+  #feature-section ul > li > div.flex-1 {
+    align-items: center;
+    text-align: center;
+  }
+  #feature-section ul > li > div.flex-1 .font-clashDisplay { text-align: center; }
+  #feature-section ul > li p { text-align: center; }
+}
+
+/* =====================================================================
+   Fin: Home (Index) – Theming & Overrides
+   ===================================================================== */
+
+/* =====================================================================
+   Home (Index) – Remap de utilidades a la paleta de marca
+   - Unifica hovers naranjas y violetas al acento azul
+   - Corrige fondos negros a azul muy oscuro en secciones del home
+   ===================================================================== */
+
+/* Remap de hover/text/border que usaban "colorOrangyRed" (naranja) */
+#hero-section .hover\:text-colorOrangyRed:hover,
+#content-section-1 .hover\:text-colorOrangyRed:hover,
+#content-section-2 .hover\:text-colorOrangyRed:hover,
+#content-section-3 .hover\:text-colorOrangyRed:hover,
+#content-intregrates-section .hover\:text-colorOrangyRed:hover,
+#footer-2 .hover\:text-colorOrangyRed:hover {
+  color: var(--home-button-accent);
+}
+#hero-section .hover\:border-colorOrangyRed:hover,
+#content-section-1 .hover\:border-colorOrangyRed:hover,
+#content-section-2 .hover\:border-colorOrangyRed:hover,
+#content-section-3 .hover\:border-colorOrangyRed:hover,
+#content-intregrates-section .hover\:border-colorOrangyRed:hover,
+#footer-2 .hover\:border-colorOrangyRed:hover {
+  border-color: var(--home-button-accent);
+}
+/* Pseudo-elementos ::after en botones/links */
+#hero-section .after\:bg-colorOrangyRed::after,
+#content-section-1 .after\:bg-colorOrangyRed::after,
+#content-section-2 .after\:bg-colorOrangyRed::after,
+#content-section-3 .after\:bg-colorOrangyRed::after,
+#content-intregrates-section .after\:bg-colorOrangyRed::after,
+#footer-2 .after\:bg-colorOrangyRed::after {
+  background-color: var(--home-button-accent);
+}
+#hero-section .after\:border-colorOrangyRed::after,
+#content-section-1 .after\:border-colorOrangyRed::after,
+#content-section-2 .after\:border-colorOrangyRed::after,
+#content-section-3 .after\:border-colorOrangyRed::after,
+#content-intregrates-section .after\:border-colorOrangyRed::after,
+#footer-2 .after\:border-colorOrangyRed::after {
+  border-color: var(--home-button-accent);
+}
+/* Variantes de "group-hover" y "checked" */
+#footer-2 .group:hover .group-hover\:text-colorOrangyRed,
+#hero-section .group:hover .group-hover\:text-colorOrangyRed,
+#content-intregrates-section .group:hover .group-hover\:text-colorOrangyRed {
+  color: var(--home-button-accent);
+}
+#footer-2 .group:hover .group-hover\:border-colorOrangyRed,
+#hero-section .group:hover .group-hover\:border-colorOrangyRed,
+#content-intregrates-section .group:hover .group-hover\:border-colorOrangyRed {
+  border-color: var(--home-button-accent);
+}
+#hero-section .checked\:after\:bg-colorOrangyRed:checked::after,
+#content-section-1 .checked\:after\:bg-colorOrangyRed:checked::after,
+#content-section-2 .checked\:after\:bg-colorOrangyRed:checked::after,
+#content-section-3 .checked\:after\:bg-colorOrangyRed:checked::after,
+#content-intregrates-section .checked\:after\:bg-colorOrangyRed:checked::after,
+#footer-2 .checked\:after\:bg-colorOrangyRed:checked::after {
+  background-color: var(--home-button-accent);
+}
+#hero-section .checked\:after\:border-colorOrangyRed:checked::after,
+#content-section-1 .checked\:after\:border-colorOrangyRed:checked::after,
+#content-section-2 .checked\:after\:border-colorOrangyRed:checked::after,
+#content-section-3 .checked\:after\:border-colorOrangyRed:checked::after,
+#content-intregrates-section .checked\:after\:border-colorOrangyRed:checked::after,
+#footer-2 .checked\:after\:border-colorOrangyRed:checked::after {
+  border-color: var(--home-button-accent);
+}
+
+/* Icon containers en footer que usan group-hover:bg-colorViolet */
+#footer-2 .group:hover .group-hover\:bg-colorViolet {
+  background-color: var(--home-button-accent);
+}
+
+/* Nota: evitamos remapear bg-black y border-black globalmente en el home
+  para no interferir con estilos base del footer y otras secciones. */
+
+/* Footer icons (index): mantener proporción con altura fija */
+#footer-2 .rounded-\[50\%\] img {
+  height: 14px !important; /* fuerza altura estándar */
+  width: auto;             /* ajusta ancho según proporción */
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* =====================================================================
+   Fin: Home (Index) – Remap utilidades
+   ===================================================================== */
+.pricing-section li.group h3,
+.pricing-section li.group p,
+.pricing-section li.group span,
+.pricing-section li.group li {
+  color: var(--pricing-text);
+}
+.pricing-section li.group:hover,
+.pricing-section li.group:hover h3,
+.pricing-section li.group:hover p,
+.pricing-section li.group:hover span,
+.pricing-section li.group:hover li {
+  color: var(--pricing-hover-text);
+}
+
+/* Separador dentro de la tarjeta (la línea de 1px) */
+.pricing-section .bg-\[\#DBD6CF\] {
+  background-color: var(--pricing-divider);
+}
+
+/* Botón dentro de precios: borde, texto e interacciones */
+.pricing-section .button {
+  /* override de border-black y text-black */
+  border-color: var(--pricing-button-border);
+  color: var(--pricing-button-text);
+}
+
+/* Relleno de hover del botón (pseudo elemento after) */
+.pricing-section .button::after {
+  background-color: var(--pricing-accent);
+}
+
+/* Texto del botón cuando el after aparece (para legibilidad) */
+.pricing-section .button:hover {
+  color: #ffffff;
+}
+
+/* En hover de tarjeta, mantener contraste del botón */
+.pricing-section li.group:hover .button {
+  border-color: var(--pricing-accent);
+  color: #ffffff;
+}
+
+/* Estados combinados: botón hover dentro de tarjeta hover */
+.pricing-section li.group:hover .button:hover::after {
+  background-color: var(--pricing-accent);
+}
+
+/* =====================================================================
+   Pricing – Remap de utilidades a la paleta azul
+   - Sustituye acentos naranjas por el acento azul de pricing
+   - Ajusta iconos de lista para evitar el naranja
+   ===================================================================== */
+
+/* Remap hover de borde naranja a azul */
+.pricing-section .hover\:border-colorOrangyRed:hover {
+  border-color: var(--pricing-accent);
+}
+/* Remap del ::after naranja a azul */
+.pricing-section .after\:bg-colorOrangyRed::after {
+  background-color: var(--pricing-accent);
+}
+.pricing-section .after\:border-colorOrangyRed::after {
+  border-color: var(--pricing-accent);
+}
+/* Remap de group-hover de borde naranja a azul */
+.pricing-section .group:hover .group-hover\:border-colorOrangyRed {
+  border-color: var(--pricing-accent);
+}
+/* Si hubiera textos con color naranja en hover, mapearlos al acento azul */
+.pricing-section .hover\:text-colorOrangyRed:hover,
+.pricing-section .group:hover .group-hover\:text-colorOrangyRed {
+  color: var(--pricing-accent);
+}
+
+/* Iconos en Pricing: respetar el comportamiento original definido en HTML
+  (imagen negra por defecto + imagen naranja visible en hover con opacity).
+  No se fuerzan cambios de opacidad/tono aquí para evitar conflictos. */
+
+/* Opcional: per-plan (descomenta y ajusta si deseas colores por tarjeta)
+.pricing-section ul > li:nth-child(1) { --pricing-card-hover-bg: #0B1020; }
+.pricing-section ul > li:nth-child(2) { --pricing-card-hover-bg: #1A3679; }
+.pricing-section ul > li:nth-child(3) { --pricing-card-hover-bg: #321CA4; }
+*/
+
+/* =====================================================================
+   Fin: Pricing Section – Theming & Overrides
+   ===================================================================== */
+
+/* =====================================================================
+   About – Theming & Overrides
+   - Unifica colores de contadores, líneas y botón del about
+   - Scope limitado a secciones de about para evitar choques
+   ===================================================================== */
+
+/* Variables del About */
+:root {
+  --about-accent: #2563EB;        /* azul acento */
+  --about-primary-dark: #111828;  /* azul muy oscuro (botones/acentos oscuros) */
+}
+
+/* Contadores: reemplaza text-colorOrangyRed por el acento azul */
+#about-funfact-section .text-colorOrangyRed {
+  color: var(--about-primary-dark);
+}
+
+/* Core Value: la barrita superior (after:bg-colorOrangyRed) al azul acento */
+#core-value li::after {
+  background-color: var(--about-accent);
+}
+
+/* Core Value wrapper: usar azul muy oscuro en lugar de negro puro */
+#core-value .bg-black {
+  background-color: var(--about-primary-dark);
+}
+
+/* Botón del bloque de contenido (content-section-2) */
+#content-section-2 .button {
+  background-color: var(--about-primary-dark);
+  border-color: var(--about-primary-dark);
+  color: #ffffff;
+}
+#content-section-2 .button::after {
+  background-color: var(--about-accent);
+}
+#content-section-2 .button:hover {
+  color: #ffffff;
+  border-color: var(--about-accent);
+}
+
+/* Si aparece hover:text-colorOrangyRed dentro de estas secciones, mapear a azul */
+#about-funfact-section .hover\:text-colorOrangyRed:hover,
+#core-value .hover\:text-colorOrangyRed:hover,
+#content-section-2 .hover\:text-colorOrangyRed:hover {
+  color: var(--about-accent);
+}
+
+/* Footer (th-1) de about/pricing: remapear hovers naranjas/violetas a azul */
+footer.bg-colorLinenRuffle .hover\:text-colorOrangyRed:hover,
+footer.bg-colorLinenRuffle .group:hover .group-hover\:text-colorOrangyRed {
+  color: var(--about-accent);
+}
+footer.bg-colorLinenRuffle .group:hover .group-hover\:bg-colorViolet {
+  background-color: var(--about-accent);
+}
+
+/* =====================================================================
+   Fin: About – Theming & Overrides
+   ===================================================================== */
+
+/* =====================================================================
+   Contact – Theming & Overrides
+   - Unifica bullets, focus de inputs y botón de envío al azul de marca
+   - Scopeado a .contact-section para evitar choques
+   ===================================================================== */
+
+/* Variables del Contacto */
+:root {
+  --contact-accent: #2563EB;
+  --contact-primary-dark: #111828;
+}
+
+/* Bullets del listado (bg-colorOrangyRed → azul) */
+.contact-section .bg-colorOrangyRed {
+  background-color: var(--contact-accent);
+}
+
+/* Inputs/textarea en focus (focus:border-colorOrangyRed → azul) */
+.contact-section .focus\:border-colorOrangyRed:focus {
+  border-color: var(--contact-accent);
+}
+
+/* Botón Enviar (negro + after naranja → azul) */
+.contact-section .button {
+  background-color: var(--contact-primary-dark);
+  border-color: var(--contact-primary-dark);
+  color: #ffffff;
+}
+.contact-section .button::after {
+  background-color: var(--contact-accent);
+}
+.contact-section .button:hover {
+  color: #ffffff;
+  border-color: var(--contact-accent);
+}
+/* Variantes de utilidades naranjas en el botón */
+.contact-section .hover\:border-colorOrangyRed:hover {
+  border-color: var(--contact-accent);
+}
+.contact-section .after\:bg-colorOrangyRed::after {
+  background-color: var(--contact-accent);
+}
+/* Íconos redondos con hover violeta -> azul de marca */
+.contact-section .group:hover .group-hover\:bg-colorViolet {
+  background-color: var(--contact-accent);
+}
+
+/* =====================================================================
+   Fin: Contact – Theming & Overrides
+   ===================================================================== */
+
+/* Contact – CTA WhatsApp layout */
+.contact-section .whatsapp-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Reducir padding para que no se vea "enorme" */
+  padding: 0;
+}
+
+/* En desktop, alinear el CTA a la izquierda */
+@media (min-width: 768px) {
+  .contact-section .whatsapp-cta {
+    justify-content: flex-start;
+  }
+}
+
+/* Hacer que el botón no sea de ancho completo en móvil y se parezca al de About */
+.contact-section .whatsapp-cta .button {
+  width: auto;           /* override de w-full */
+  max-width: max-content;
+  text-align: center;
+}
+
+/* =====================================================================
+   FAQ – Theming & Overrides
+   - Estiliza tabs (faq-button) y acordeones con paleta azul
+   - Evita tocar HTML; solo overrides con mayor especificidad
+   ===================================================================== */
+
+/* Variables del FAQ */
+:root {
+  --faq-accent: #111828;
+  --faq-primary-dark: #111828;
+}
+
+/* Tabs laterales */
+.faq-section .faq-button {
+  border: 2px solid var(--faq-primary-dark);
+  color: var(--faq-primary-dark);
+  background: transparent;
+  font-weight: 700;
+  border-radius: 9999px; /* pill */
+  padding: 12px 18px;
+  transition: all .3s ease;
+}
+.faq-section .faq-button:hover,
+.faq-section .faq-button.active {
+  background-color: var(--faq-accent);
+  border-color: var(--faq-accent);
+  color: #ffffff;
+}
+
+/* Acordeón: resaltar activo con borde acento */
+.faq-section .accordion-item.active {
+  border-color: var(--faq-accent) !important;
+}
+
+/* Por si aparecieran utilidades naranjas dentro de FAQ */
+.faq-section .hover\:text-colorOrangyRed:hover,
+.faq-section .group:hover .group-hover\:text-colorOrangyRed {
+  color: var(--faq-accent);
+}
+.faq-section .hover\:border-colorOrangyRed:hover,
+.faq-section .group:hover .group-hover\:border-colorOrangyRed {
+  border-color: var(--faq-accent);
+}
+.faq-section .after\:bg-colorOrangyRed::after,
+.faq-section .after\:border-colorOrangyRed::after {
+  background-color: var(--faq-accent);
+  border-color: var(--faq-accent);
+}
+
+/* =====================================================================
+   Fin: FAQ – Theming & Overrides
+   ===================================================================== */
+
+/* =====================================================================
+   Home – Ocultar fondo gris detrás de mockups (content-shape.jpg)
+   - Remueve la imagen de fondo de los contenedores de las secciones 1, 2 y 3
+   - Evita tocar el HTML (override por selector de atributo)
+   ===================================================================== */
+#content-section-1 [class*="content-shape.jpg"],
+#content-section-2 [class*="content-shape.jpg"],
+#content-section-3 [class*="content-shape.jpg"] {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* =====================================================================
+   Home – Integrations logos (tamaño uniforme)
+   - Fuerza un tamaño consistente de los íconos dentro de las filas animadas
+   - Mantiene proporción con object-fit: contain
+   ===================================================================== */
+#content-intregrates-section .horizontal-slide-from-right-to-left img,
+#content-intregrates-section .horizontal-slide-from-left-to-right img {
+  width: 59px;
+  height: 59px;
+  object-fit: contain;
+  display: block;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  #content-intregrates-section .horizontal-slide-from-right-to-left img,
+  #content-intregrates-section .horizontal-slide-from-left-to-right img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* =====================================================================
+   Home – CTA última sección: visibilidad responsive robusta
+   - cta-last-mobile: visible solo < 768px
+   - cta-last-desktop: visible solo >= 768px
+   ===================================================================== */
+.cta-last-mobile {
+  display: flex !important;              /* bloque flex para permitir centrado */
+  width: max-content !important;         /* ancho ajustado al contenido */
+  margin-left: auto !important;          /* centra horizontalmente */
+  margin-right: auto !important;         /* centra horizontalmente */
+}
+.cta-last-desktop { display: none !important; }
+
+@media (min-width: 768px) {
+  .cta-last-mobile { display: none !important; }
+  .cta-last-desktop { display: inline-flex !important; }
 }

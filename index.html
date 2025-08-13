@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cüymo - Inicio</title>
-    <meta name="description" content="AIMass Tailwind based SASS Template" />
+    <meta name="description" content="Chatbots con IA y automatizaciones para atención 24/7, ventas y soporte. Integra tus canales y escala tu negocio con Cüymo." />
 
     <!-- Favicon  -->
     <link rel="icon" href="assets/img/favicon.png" />
@@ -25,6 +25,16 @@
 
     <!-- Production css -->
     <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
+
+    <!-- Smooth scroll for anchor links and offset for sticky header -->
+    <style>
+        html { scroll-behavior: smooth; }
+        /* Prevent the target from being hidden under the sticky header */
+        #heading-hero-content { scroll-margin-top: 120px; }
+        /* Quita el rectángulo que aparece al llegar a la sección por el hash */
+        #heading-hero-content:target { outline: none; box-shadow: none; }
+    </style>
+    <!-- Smooth scroll for anchor links and offset for sticky header -->
 </head>
 
 <body>
@@ -89,7 +99,7 @@
                     <div class="pb-28 pt-28 md:pb-40 lg:pt-28 xl:pb-[90px] xl:pt-[122px]">
                         <!-- Section Container -->
                         <div class="global-container">
-                            <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-[minmax(0,_1fr)_0.7fr]">
+                            <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-[minmax(0,_1fr)_0.7fr]" id="heading-hero-content">
                                 <!-- Hero Content -->
                                 <div>
                                     <h1
@@ -102,8 +112,8 @@
                                         soporte instantáneo, disponibilidad 24/7 y respuestas eficientes
                                         a consultas.
                                     </p>
-                                    <a href="https://api.whatsapp.com/send?phone=593939028131&text=%C2%A1Hola%21%2C+estoy+interesado+en+sus+servicios.+%0A%C2%BFMe+podr%C3%ADan+ayudar+m%C3%A1s+informaci%C3%B3n%3F+%F0%9F%98%84%F0%9F%92%BC"
-                                        class="jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[18px] text-white after:bg-colorOrangyRed hover:text-white">
+                                    <a target="\_blank" href="https://api.whatsapp.com/send?phone=593939028131&text=%C2%A1Hola%21%2C+estoy+interesado+en+sus+servicios.+%0A%C2%BFMe+podr%C3%ADan+ayudar+m%C3%A1s+informaci%C3%B3n%3F+%F0%9F%98%84%F0%9F%92%BC"
+                                        class="jos button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none py-[18px] text-white hover:text-white">
                                         Quiero mi prueba gratuita
                                         <img src="assets/img/th-2/icon-white-long-arrow-right.svg"
                                             alt="icon-white-long-arrow-right" /></a>
@@ -122,7 +132,7 @@
                     <!-- Section Spacer -->
                     <!-- Background Gradient -->
                     <div
-                        class="absolute left-1/2 top-[80%] h-[1280px] w-[1280px] -translate-x-1/2 rounded-full bg-gradient-to-t from-[#5636C7] to-[#5028DD] blur-[250px]">
+                        class="absolute left-1/2 top-[80%] h-[1280px] w-[1280px] -translate-x-1/2 rounded-full bg-gradient-to-t blur-[250px]">
                     </div>
                     <div
                         class="absolute bottom-0 left-1/2 h-[77px] w-full -translate-x-1/2 bg-[url(../img/th-2/arc-top-shape-1.svg)] bg-cover bg-center bg-no-repeat">
@@ -141,7 +151,7 @@
                             class="jos mb-10 text-left sm:mx-auto sm:text-center md:mb-16 md:max-w-xl lg:mb-20 lg:max-w-3xl xl:max-w-[856px]">
                             <h2
                                 class="font-clashDisplay text-4xl font-medium leading-[1.06] sm:text-[44px] lg:text-[56px] xl:text-[75px]">
-                                Remarkable features in effective conversation
+                                Funciones destacadas para conversaciones efectivas
                             </h2>
                         </div>
                         <!-- Section Content Block -->
@@ -157,11 +167,10 @@
                                 <div class="flex flex-1 flex-col gap-y-5">
                                     <div
                                         class="font-clashDisplay text-[22px] font-medium leading-6 lg:text-[28px] lg:leading-5">
-                                        Multilingual Support
+                                        Atención multimodal
                                     </div>
                                     <p>
-                                        Our AI chatbots are capable for the communicating in
-                                        multilingual
+                                        Nuestros chatbots con IA pueden entender y responder a múltiples tipos de entradas, como texto, voz e imágenes, lo que permite una interacción más rica y efectiva.
                                     </p>
                                 </div>
                             </li>
@@ -176,11 +185,10 @@
                                 <div class="flex flex-1 flex-col gap-y-5">
                                     <div
                                         class="font-clashDisplay text-[22px] font-medium leading-6 lg:text-[28px] lg:leading-5">
-                                        Intent Recognition
+                                        Detección de intención
                                     </div>
                                     <p>
-                                        It can determine what the user is trying to respond
-                                        accordingly
+                                        Identifican lo que el usuario necesita y responden en consecuencia.
                                     </p>
                                 </div>
                             </li>
@@ -195,11 +203,10 @@
                                 <div class="flex flex-1 flex-col gap-y-5">
                                     <div
                                         class="font-clashDisplay text-[22px] font-medium leading-6 lg:text-[28px] lg:leading-5">
-                                        Context Management
+                                        Respuestas rápidas
                                     </div>
                                     <p>
-                                        AI allows chatbots to refer back to a earlier messages,
-                                        answer follow-up
+                                        Respuestas instantáneas a preguntas frecuentes y consultas comunes.
                                     </p>
                                 </div>
                             </li>
@@ -212,6 +219,7 @@
                 <!-- Section Spacer -->
             </section>
             <!--...::: Feature Section End :::... -->
+            
             <!-- Separator -->
             <div class="global-container">
                 <div class="h-[1px] w-full bg-[#EAEDF0]"></div>
@@ -241,30 +249,28 @@
                                 <div class="mb-6">
                                     <h2
                                         class="font-clashDisplay text-4xl font-medium leading-[1.06] sm:text-[44px] lg:text-[56px] xl:text-[75px]">
-                                        Expression of like human attitude
+                                        Conversaciones naturales y cercanas
                                     </h2>
                                 </div>
                                 <!-- Section Content Block -->
                                 <div class="text-lg leading-[1.66]">
                                     <p class="mb-7 last:mb-0">
-                                        Our AI chatbots excel at understanding natural language
-                                        and generating human-like responses. Adapting your
-                                        conversational style to our chatbot can improve the
-                                        quality of your interactions.
+                                        Nuestros chatbots entienden lenguaje natural y generan respuestas
+                                        como una persona, mejorando la experiencia con sus clientes.
                                     </p>
                                     <ul
                                         class="mt-12 flex flex-col gap-y-6 font-clashDisplay text-[22px] font-medium leading-[1.28] tracking-[1px] lg:text-[28px]">
                                         <li
-                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%] after:bg-colorViolet">
-                                            Use natural language as you were talking
+                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%]">
+                                            Usa lenguaje natural, como si estuvieras conversando
                                         </li>
                                         <li
-                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%] after:bg-colorViolet">
-                                            The conversation with a polite greeting
+                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%]">
+                                            Inicia la conversación con un saludo cordial
                                         </li>
                                         <li
-                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%] after:bg-colorViolet">
-                                            Feel free to use emotions and expressions
+                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%]">
+                                            Usa emociones y expresiones cuando aplique
                                         </li>
                                     </ul>
                                 </div>
@@ -301,29 +307,28 @@
                                 <div class="mb-6">
                                     <h2
                                         class="font-clashDisplay text-4xl font-medium leading-[1.06] sm:text-[44px] lg:text-[56px] xl:text-[75px]">
-                                        Faster means of communication
+                                        Comunicación más rápida
                                     </h2>
                                 </div>
                                 <!-- Section Content Block -->
                                 <div class="text-lg leading-[1.66]">
                                     <p class="mb-7 last:mb-0">
-                                        This AI chatbot can handle repetitive tasks and also
-                                        quickly answer frequently asked questions, businesses to
-                                        save time and resources.
+                                        Nuestros chatbots manejan tareas repetitivas y responden rápidamente
+                                        preguntas frecuentes, ahorrando tiempo y recursos.
                                     </p>
                                     <ul
                                         class="mt-12 flex flex-col gap-y-6 font-clashDisplay text-[22px] font-medium leading-[1.28] tracking-[1px] lg:text-[28px]">
                                         <li
-                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%] after:bg-colorViolet">
-                                            Provide instant responses any queries
+                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%]">
+                                            Respuestas instantáneas a cualquier consulta
                                         </li>
                                         <li
-                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%] after:bg-colorViolet">
-                                            Engage in multiple conversations at once
+                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%]">
+                                            Atiende múltiples conversaciones a la vez
                                         </li>
                                         <li
-                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%] after:bg-colorViolet">
-                                            Manage all frequently asked questions
+                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%]">
+                                            Gestiona todas las preguntas frecuentes
                                         </li>
                                     </ul>
                                 </div>
@@ -352,6 +357,11 @@
                                         width="320" height="564"
                                         class="absolute bottom-0 left-1/2 h-[564px] w-[320px] -translate-x-1/2" />
                                 </div>
+                                <!-- CTA solo móvil: debajo de la imagen -->
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=593939028131&text=%C2%A1Hola%21%2C+estoy+interesado+en+sus+servicios.+%0A%C2%BFMe+podr%C3%ADan+ayudar+m%C3%A1s+informaci%C3%B3n%3F+%F0%9F%98%84%F0%9F%92%BC"
+                                    class="button relative z-[1] mt-6 mx-auto inline-flex items-center gap-3 rounded-[50px] border-none py-[18px] text-white hover:text-white cta-last-mobile">Quiero mi prueba gratuita
+                                    <img src="assets/img/th-2/icon-white-long-arrow-right.svg"
+                                        alt="icon-white-long-arrow-right" /></a>
                             </div>
                             <!-- Content Left Block -->
                             <!-- Content Right Block -->
@@ -360,26 +370,22 @@
                                 <div class="mb-6">
                                     <h2
                                         class="font-clashDisplay text-4xl font-medium leading-[1.06] sm:text-[44px] lg:text-[56px] xl:text-[75px]">
-                                        Always provide the best answer
+                                        Siempre ofrece la mejor respuesta
                                     </h2>
                                 </div>
                                 <!-- Section Content Block -->
                                 <div class="mb-12 text-lg leading-[1.66]">
                                     <p class="mb-7 last:mb-0">
-                                        AI chatbots are designed to give accurate & relevant
-                                        answers to the best of their abilities based on the
-                                        information they are trained and algorithms to ensure
-                                        high-quality responses.
+                                        Están diseñados para entregar respuestas precisas y relevantes según
+                                        la información con la que se entrenan y las reglas de tu negocio.
                                     </p>
                                     <p class="mb-7 last:mb-0">
-                                        Our chatbot responses is influenced by the quality and
-                                        well-trained chatbots are more likely to provide better
-                                        answers.
+                                        Cuanto mejor sea la base de conocimiento, mejores serán las respuestas
+                                        del asistente.
                                     </p>
                                 </div>
-                                <a href="https://www.example.com"
-                                    class="button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[18px] text-white after:bg-colorOrangyRed hover:text-white">Try
-                                    It Now
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=593939028131&text=%C2%A1Hola%21%2C+estoy+interesado+en+sus+servicios.+%0A%C2%BFMe+podr%C3%ADan+ayudar+m%C3%A1s+informaci%C3%B3n%3F+%F0%9F%98%84%F0%9F%92%BC"
+                                    class="button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none py-[18px] text-white hover:text-white cta-last-desktop">Quiero mi prueba gratuita
                                     <img src="assets/img/th-2/icon-white-long-arrow-right.svg"
                                         alt="icon-white-long-arrow-right" /></a>
                             </div>
@@ -405,30 +411,28 @@
                                     <div class="mb-6">
                                         <h2
                                             class="font-clashDisplay text-4xl font-medium leading-[1.06] text-white sm:text-[44px] lg:text-[56px] xl:text-[75px]">
-                                            Integrates your favorite channels
+                                            Integra tus aplicaciones favoritos
                                         </h2>
                                     </div>
                                     <!-- Section Content Block -->
                                     <p class="mb-7 last:mb-0">
-                                        The ability to integrate AI chatbots into multiple
-                                        channels enables businesses to meet users where they are,
-                                        providing a consistent and convenient experience across
-                                        various touchpoints.
+                                        Integra los chatbots en múltiples aplicaciones para ofrecer una experiencia
+                                        consistente y conveniente en cada punto de contacto.
                                     </p>
                                     <ul
                                         class="my-12 flex flex-col gap-y-6 font-clashDisplay text-[22px] font-medium leading-[1.28] tracking-[1px] lg:text-[28px]">
                                         <li
-                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%] after:bg-colorViolet">
-                                            It preferred all communication channels
+                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%]">
+                                            Compatible con tus aplicaciones del día a día
                                         </li>
                                         <li
-                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%] after:bg-colorViolet">
-                                            Use platform users regardless of support
+                                            class="relative pl-[35px] after:absolute after:left-[10px] after:top-3 after:h-[15px] after:w-[15px] after:rounded-[50%]">
+                                            Atiende a tus usuarios usando tus herramientas favoritas
                                         </li>
                                     </ul>
-                                    <a href="https://www.example.com"
-                                        class="button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none bg-colorViolet py-[18px] text-white after:bg-colorOrangyRed hover:text-white">Explore
-                                        Integrations
+                                    <a href="pricing.html"
+                                        class="button relative z-[1] inline-flex items-center gap-3 rounded-[50px] border-none py-[18px] text-white hover:text-white">Explorar
+                                        precios
                                         <img src="assets/img/th-2/icon-white-long-arrow-right.svg"
                                             alt="icon-white-long-arrow-right" /></a>
                                 </div>
@@ -438,28 +442,28 @@
                                     <div class="horizontal-slide-from-right-to-left flex w-[1161px] gap-x-6">
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-discord.svg"
-                                                alt="icon-flat-color-discord" />
+                                            <img src="assets/img/th-2/icon-flat-color-google-calendar.svg"
+                                                alt="icon-flat-color-google-calendar" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-github.svg"
-                                                alt="icon-flat-color-github" />
+                                            <img src="assets/img/th-2/icon-flat-color-google-drive.svg"
+                                                alt="icon-flat-color-google-drive" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-mailchamp.svg"
-                                                alt="icon-flat-color-mailchamp" />
+                                            <img src="assets/img/th-2/icon-flat-color-google-sheets.svg"
+                                                alt="icon-flat-color-google-sheets" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-messenger.svg"
-                                                alt="icon-flat-color-messenger" />
+                                            <img src="assets/img/th-2/icon-flat-color-telegram.svg"
+                                                alt="icon-flat-color-telegram" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-skype.svg"
-                                                alt="icon-flat-color-skype" />
+                                            <img src="assets/img/th-2/icon-flat-color-shopify.svg"
+                                                alt="icon-flat-color-shopify" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
@@ -468,8 +472,8 @@
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-snapchat.svg"
-                                                alt="icon-flat-color-snapchat" />
+                                            <img src="assets/img/th-2/icon-flat-color-zoom.svg"
+                                                alt="icon-flat-color-zoom" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
@@ -478,8 +482,8 @@
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-zendesk.svg"
-                                                alt="icon-flat-color-zendesk" />
+                                            <img src="assets/img/th-2/icon-flat-color-oodo.svg"
+                                                alt="icon-flat-color-oodo" />
                                         </div>
                                     </div>
                                     <!-- Logo Horizontal Animation -->
@@ -498,8 +502,8 @@
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-mailchamp.svg"
-                                                alt="icon-flat-color-mailchamp" />
+                                            <img src="assets/img/th-2/icon-flat-color-facebook.svg"
+                                                alt="icon-flat-color-facebook" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
@@ -508,18 +512,18 @@
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-skype.svg"
-                                                alt="icon-flat-color-skype" />
+                                            <img src="assets/img/th-2/icon-flat-color-instagram.svg"
+                                                alt="icon-flat-color-instagram" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-slack.svg"
-                                                alt="icon-flat-color-slack" />
+                                            <img src="assets/img/th-2/icon-flat-color-google-meet.svg"
+                                                alt="icon-flat-color-google-meet" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-snapchat.svg"
-                                                alt="icon-flat-color-snapchat" />
+                                            <img src="assets/img/th-2/icon-flat-color-linkedin.svg"
+                                                alt="icon-flat-color-linkedin" />
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
@@ -528,8 +532,8 @@
                                         </div>
                                         <div
                                             class="flex h-[105px] w-[105px] items-center justify-center rounded-[10px] bg-white">
-                                            <img src="assets/img/th-2/icon-flat-color-zendesk.svg"
-                                                alt="icon-flat-color-zendesk" />
+                                            <img src="assets/img/th-2/icon-flat-color-gmail.svg"
+                                                alt="icon-flat-color-gmail" />
                                         </div>
                                     </div>
                                     <!-- Logo Horizontal Animation -->
@@ -541,7 +545,7 @@
                     <!-- Section Spacer -->
 
                     <div
-                        class="absolute left-1/2 top-[80%] -z-[1] h-[1280px] w-[1280px] -translate-x-1/2 rounded-full bg-gradient-to-t from-[#5636C7] to-[#5028DD] blur-[250px]">
+                        class="absolute left-1/2 top-[80%] -z-[1] h-[1280px] w-[1280px] -translate-x-1/2 rounded-full bg-gradient-to-t blur-[250px]">
                     </div>
                 </div>
             </section>
@@ -567,7 +571,7 @@
                                 class="mx-auto mb-10 text-center md:mb-16 md:max-w-lg lg:mb-20 lg:max-w-xl xl:max-w-3xl">
                                 <h2
                                     class="font-clashDisplay text-4xl font-medium leading-[1.06] text-white sm:text-[44px] lg:text-[56px] xl:text-[75px]">
-                                    Let's get started and enjoy the power of AI
+                                    Empieza hoy y aprovecha el poder de la IA
                                 </h2>
                             </div>
                             <!-- Section Content Block -->
@@ -589,10 +593,10 @@
                                     <h4 class="text-[21px] font-semibold capitalize text-white">Soluciones</h4>
                                     <ul class="flex flex-col gap-y-[10px] capitalize">
                                         <li>
-                                            <a href="#" class="transition-all duration-300 ease-linear hover:text-colorOrangyRed">Vendedor IA</a>
+                                            <a href="#heading-hero-content" class="transition-all duration-300 ease-linear hover:text-colorOrangyRed">Vendedor IA</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="transition-all duration-300 ease-linear hover:text-colorOrangyRed">Automatizaciones</a>
+                                            <a href="#heading-hero-content" class="transition-all duration-300 ease-linear hover:text-colorOrangyRed">Automatizaciones</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -608,12 +612,12 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <!-- Footer Widget: Conéctace -->
+                                <!-- Footer Widget: Conéctate -->
                                 <div class="flex flex-col gap-y-6">
-                                    <h4 class="text-[21px] font-semibold capitalize text-white">Conéctace</h4>
+                                    <h4 class="text-[21px] font-semibold capitalize text-white">Conéctate</h4>
                                     <ul class="flex flex-col gap-y-[15px] capitalize">
                                         <li>
-                                            <a href="http://www.facebook.com" class="group flex items-center gap-x-3">
+                                            <a target="_blank" href="http://www.facebook.com/cuymoec/" class="group flex items-center gap-x-3">
                                                 <div class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-10 transition-all duration-300 group-hover:bg-colorViolet">
                                                     <img src="assets/img/th-1/facebook-icon-white.svg" alt="facebook-icon-white" width="14" height="14" />
                                                 </div>
@@ -621,7 +625,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="http://www.instagram.com" class="group flex items-center gap-x-3">
+                                            <a  target="_blank" href="http://www.instagram.com/cuymo_ec/" class="group flex items-center gap-x-3">
                                                 <div class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-10 transition-all duration-300 group-hover:bg-colorViolet">
                                                     <img src="assets/img/th-1/instagram-icon-white.svg" alt="instagram-icon-white" width="14" height="14" />
                                                 </div>
@@ -629,9 +633,9 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="http://www.tiktok.com" class="group flex items-center gap-x-3">
+                                            <a target="_blank" href="http://www.tiktok.com/@cuymo/" class="group flex items-center gap-x-3">
                                                 <div class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-10 transition-all duration-300 group-hover:bg-colorViolet">
-                                                    <img src="assets/img/th-1/twitter-icon-white.svg" alt="tiktok-icon-white" width="14" height="14" />
+                                                    <img src="assets/img/th-1/tiktok-icon-white.svg" alt="tiktok-icon-white" width="14" height="14" />
                                                 </div>
                                                 <span class="inline-block flex-1">Tiktok</span>
                                             </a>
@@ -670,7 +674,7 @@
                 <!-- Section Container -->
                 <!-- Background Gradient -->
                 <div
-                    class="absolute left-1/2 top-[80%] -z-[1] h-[1280px] w-[1280px] -translate-x-1/2 rounded-full bg-gradient-to-t from-[#5636C7] to-[#5028DD] blur-[250px]">
+                    class="absolute left-1/2 top-[80%] -z-[1] h-[1280px] w-[1280px] -translate-x-1/2 rounded-full bg-gradient-to-t blur-[250px]">
                 </div>
             </div>
         </footer>

@@ -98,3 +98,43 @@ const testimonialSlider = new Swiper(".testimonial-slider", {
     prevEl: ".testimonial-nav-prev",
   },
 });
+
+// ======================== Simple client-side 404 handling ================================
+(function () {
+  try {
+    // Don't run this on file: protocol to avoid issues in local previews
+    if (window.location.protocol === 'file:') return;
+
+    const path = window.location.pathname.replace(/\\/g, '/');
+    // Ignore asset paths
+    if (/\/(assets|fonts|img|css|js)\//.test(path)) return;
+
+    const segment = path.split('/').filter(Boolean).pop() || '';
+    const slug = segment.toLowerCase();
+
+    // Known pages
+    const pagesWithHtml = new Set([
+      '', 'index.html', 'about.html', 'contact.html', 'pricing.html', 'faq.html', 'error-404.html'
+    ]);
+    const pagesNoExt = new Set([
+      '', 'index', 'about', 'contact', 'pricing', 'faq', 'error-404'
+    ]);
+
+    // Already on a known page? OK
+    if (pagesWithHtml.has(slug)) return;
+
+    // If the user typed /pricing (without .html), normalize to pricing.html
+    if (!slug.includes('.') && pagesNoExt.has(slug)) {
+      const target = slug ? `${slug}.html` : 'index.html';
+      window.location.replace(target);
+      return;
+    }
+
+    // Otherwise, redirect unknown routes to 404 (avoid loop)
+    if (slug !== 'error-404.html') {
+      window.location.replace('error-404.html');
+    }
+  } catch (_) {
+    // no-op
+  }
+})();
