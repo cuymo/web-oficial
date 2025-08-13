@@ -180,6 +180,7 @@ input:where([type=button]),
 input:where([type=reset]),
 input:where([type=submit]) {
     -webkit-appearance: button;
+    appearance: button;
     background-color: initial;
     background-image: none
 }
@@ -203,15 +204,18 @@ progress {
 
 [type=search] {
     -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px
 }
 
 ::-webkit-search-decoration {
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    appearance: none
 }
 
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
+    appearance: button;
     font: inherit
 }
 
